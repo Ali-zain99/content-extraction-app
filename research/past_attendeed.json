@@ -1,0 +1,15 @@
+```json
+{
+  "Past Attendees": [
+    { "name": "Oxy" },
+    { "name": "Pioneer Natural Resources" },
+    { "name": "CG Thermal" },
+    { "name": "Chevron" },
+    { "name": "ExxonMobil" },
+    { "name": "TotalEnergies" },
+    { "name": "Technip Energies" },
+    { "name": "Halliburton" },
+    { "name": "SLB" }
+  ]
+}
+```

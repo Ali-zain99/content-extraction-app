@@ -1,0 +1,34 @@
+{
+  "testimonial": [
+    {
+      "name": "Jennifer Zwarich",
+      "company": "Alberta Energy Regulator",
+      "text": "Incredible learnings into various technologies and the state of the industry."
+    },
+    {
+      "name": "Don Mack",
+      "company": "Siemens Industry, Inc.",
+      "text": "Great insights into the industry from speakers and highly engaging panel sessions."
+    },
+    {
+      "name": "John Agele",
+      "company": "Weatherford",
+      "text": "Very informative event; enjoyed discovering different approaches and perspectives."
+    },
+    {
+      "name": "Josh Brownlow",
+      "company": "Pioneer Natural Resources",
+      "text": "Excellent chance to engage with current industry leaders and experts."
+    },
+    {
+      "name": "Pater Vaet",
+      "company": "Go2Lithium",
+      "text": "A remarkable event addressing a range of key industry issues."
+    },
+    {
+      "name": "Michelle Mashava",
+      "company": "E3 Lithium",
+      "text": "Highly knowledgeable speakers sharing diverse insights and detailed analysis."
+    }
+  ]
+}

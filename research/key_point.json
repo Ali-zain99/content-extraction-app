@@ -1,0 +1,28 @@
+```json
+[
+  {
+    "keypoint": "1",
+    "description": "Evaluating the economic impact of geothermal energy projects across the sector.",
+  },
+  {
+    "keypoint": "2",
+    "description": "Key technical aspects and core designs for geothermal energy.",
+  },
+  {
+    "keypoint": "3",
+    "description": "Latest geothermal regulatory updates on frameworks, permits, and incentives.",
+  },
+  {
+    "keypoint": "4",
+    "description": "Latest insights on heat extraction methods, binary and flash systems, and control of geothermal plants.",
+  },
+  {
+    "keypoint": "5",
+    "description": "Assess permitting procedures and regulatory requirements to streamline development and improve the investment appeal of geothermal.",
+  },
+  {
+    "keypoint": "6",
+    "description": "Hear success stories that showcase transferable technologies, robust supply chains, and workforce strategies advancing geothermal project.",
+  }
+]
+```
