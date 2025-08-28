@@ -14,10 +14,10 @@ def build_prompt():
     return """
 As a data extraction task, meticulously examine the provided image (original and cropped segments). 
 The objective is to precisely identify the count or value associated with the following specific metrics displayed within the visual:
-- Total Industry Topics
-- Number of Networking Events
-- Quantity of Leading Experts
-- Number of Q&A Sessions
+- Industry Topics
+- Networking Events
+- Leading Experts
+- Q&A Sessions
 
 Return only a valid JSON object in this format:
 {
@@ -65,12 +65,11 @@ def ocr_with_gemini(pil_image):
 # --------------------------
 # PDF to Image
 # --------------------------
-def get_page_image(pdf_path, page_num, poppler_path=None):
+def get_page_image(pdf_path, page_num, ):
     images = convert_from_path(
         pdf_path,
         first_page=page_num,
         last_page=page_num,
-        poppler_path=poppler_path
     )
     if images:
         return images[0]
@@ -141,12 +140,11 @@ def send_to_api(payload, base_url):
 # Main Pipeline
 # --------------------------
 def main(pdf_path,API_KEY,website_url):
-    poppler_path=r"C:\Users\ali.zain\Desktop\Content_Extraction\poppler-24.08.0\Library\bin"
     # Configure Gemini API
     genai.configure(api_key=API_KEY)
 
     # Extract page image
-    page_img = get_page_image(pdf_path, 2, poppler_path)
+    page_img = get_page_image(pdf_path, 2 )
     if not page_img:
         print("❌ Could not extract page image")
         return

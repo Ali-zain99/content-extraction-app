@@ -1,0 +1,28 @@
+{
+  "upcomingEvent": [
+    {
+      "eventname": "DLU 25",
+      "eventlocation": "Orange County, California, USA",
+      "eventlink": null,
+      "eventdate": "December 1 - 2, 2025",
+      "image": null,
+      "hoverimage": null
+    },
+    {
+      "eventname": "RSU 25",
+      "eventlocation": "Houston, Texas, USA",
+      "eventlink": null,
+      "eventdate": "December 3 - 4, 2025",
+      "image": null,
+      "hoverimage": null
+    },
+    {
+      "eventname": "AFS 25",
+      "eventlocation": "Houston, Texas, USA",
+      "eventlink": null,
+      "eventdate": "December 11 - 12, 2025",
+      "image": null,
+      "hoverimage": null
+    }
+  ]
+}

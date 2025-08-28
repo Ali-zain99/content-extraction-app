@@ -61,12 +61,12 @@ Important Rules:
 # --------------------------
 # Extract Page Image from PDF
 # --------------------------
-def get_page_image(pdf_path, page_num, poppler_path):
+def get_page_image(pdf_path, page_num):
     images = convert_from_path(
         pdf_path,
         first_page=page_num,
         last_page=page_num,
-        poppler_path=poppler_path
+        
     )
     if images:
         return images[0]
@@ -141,7 +141,7 @@ def load_clean_json(raw_text, save_path=r"C:\Users\ali.zain\Desktop\Content_Extr
 # --------------------------
 # Send Testimonials to API
 # --------------------------
-def send_to_api(data, api_url, start_index=4):
+def send_to_api(data, api_url, start_index=1):
     count = start_index
     for event in data["upcomingEvent"]:  # event is each dict inside the list
         url = f"{api_url}/{count}"
@@ -176,11 +176,10 @@ def main(pdf_path,API_KEY,website_url):
     page_num=2
     api_url=website_url+"/api/upcoming-events/update"
     # api_url="https://ai-demo.genetechz.com/api/upcoming-events/update"
-    poppler_path = r"C:\Users\ali.zain\Desktop\Content_Extraction\poppler-24.08.0\Library\bin"
     crop_box = (955, 20260, 4413, 21854)
     api_key = API_KEY
     # Step 1: Get page image
-    img = get_page_image(pdf_path, page_num, poppler_path)
+    img = get_page_image(pdf_path, page_num)
     if not img:
         raise FileNotFoundError("❌ Could not extract page image from PDF")
 

@@ -1,0 +1,22 @@
+```json
+{
+  "Event name": "Geothermal Systems",
+  "Event code": "EGU",
+  "Event Tagline": "Enhanced Geothermal Systems",
+  "Event Dates": "March, 11 - 12, 2026",
+  "Event Location": "Houston, Texas, USA",
+  "Event year": "2026",
+  "Event Currency": "USD",
+  "Event Short Dates": "Mar, 11 - 12, 2026",
+  "Event Short Location": "TX",
+  "Event Color Name": "Enhanced",
+  "Event City Shortcode": "HOU",
+  "Event Postponed": false,
+  "Industry Name": "Clean Energy",
+  "Previous Agenda": true,
+  "Hubspot Disposition": "disposition_egu_2026",
+  "Hubspot Email Status": "email_status_egu_2026",
+  "Custom Currency Symbol": "",
+  "Currency Position": "Top left"
+}
+```

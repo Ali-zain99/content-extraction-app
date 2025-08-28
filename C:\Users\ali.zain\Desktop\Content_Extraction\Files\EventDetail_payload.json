@@ -1,0 +1,112 @@
+{
+  "options": [
+    {
+      "id": 1,
+      "option": "event_name",
+      "value": "Geothermal Systems",
+      "label": "Event Name"
+    },
+    {
+      "id": 2,
+      "option": "event_code",
+      "value": "EGU",
+      "label": "Event Code"
+    },
+    {
+      "id": 3,
+      "option": "event_tagline",
+      "value": "Enhanced Geothermal Systems",
+      "label": "Event Tagline"
+    },
+    {
+      "id": 4,
+      "option": "event_dates",
+      "value": "March, 11 - 12, 2026",
+      "label": "Event Dates"
+    },
+    {
+      "id": 5,
+      "option": "event_Location",
+      "value": "Houston, Texas, USA",
+      "label": "Event Location"
+    },
+    {
+      "id": 6,
+      "option": "event_year",
+      "value": "2026",
+      "label": "Event Year"
+    },
+    {
+      "id": 7,
+      "option": "event_currency",
+      "value": "USD",
+      "label": "Event Currency"
+    },
+    {
+      "id": 8,
+      "option": "event_short_date",
+      "value": "Mar, 11 - 12, 2026",
+      "label": "Event Short Date"
+    },
+    {
+      "id": 9,
+      "option": "event_short_location",
+      "value": "TX",
+      "label": "Event Short Location"
+    },
+    {
+      "id": 10,
+      "option": "event_color_name",
+      "value": "Enhanced",
+      "label": "Event Color Name"
+    },
+    {
+      "id": 11,
+      "option": "event_city_shortcode",
+      "value": "HOU",
+      "label": "Event City Shortcode"
+    },
+    {
+      "id": 12,
+      "option": "event_postponed",
+      "value": "false",
+      "label": "Event Postponed"
+    },
+    {
+      "id": 13,
+      "option": "industry_name",
+      "value": "Clean Energy",
+      "label": "Industry Name"
+    },
+    {
+      "id": 14,
+      "option": "previous_agenda",
+      "value": "true",
+      "label": "Previous Agenda"
+    },
+    {
+      "id": 15,
+      "option": "hubspot_disposition",
+      "value": "disposition_egu_2026",
+      "label": "Hubspot Disposition"
+    },
+    {
+      "id": 16,
+      "option": "hubspot_email_status",
+      "value": "email_status_egu_2026",
+      "label": "Hubspot Email Status"
+    },
+    {
+      "id": 17,
+      "option": "custom_currency_symbol",
+      "value": "",
+      "label": "Custom Currency Symbol"
+    },
+    {
+      "id": 18,
+      "option": "currency_postion",
+      "value": "Top left",
+      "label": "Currency Postion"
+    }
+  ]
+}

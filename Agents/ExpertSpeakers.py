@@ -45,12 +45,11 @@ Output only valid JSON in this format:
 # --------------------------
 # Extract page image from PDF
 # --------------------------
-def get_page_image(pdf_path, page_num, poppler_path):
+def get_page_image(pdf_path, page_num):
     images = convert_from_path(
         pdf_path,
         first_page=page_num,
         last_page=page_num,
-        poppler_path=poppler_path
     )
     if images:
         return images[0]  # Return PIL.Image.Image object
@@ -151,14 +150,13 @@ def send_to_api(data, api_url):
 # Main Function
 # --------------------------
 def main(pdf_path, API_KEY, website_url):
-    poppler_path = r"C:\Users\ali.zain\Desktop\Content_Extraction\poppler-24.08.0\Library\bin"
     crop_box = (886, 11100, 3250, 12347)
     api_key = API_KEY
     api_url = f"{website_url}/api/expert-speakers/update"
     # api_url = "https://ai-demo.genetechz.com/api/expert-speakers/update"  # Replace
 
     # Step 1: Get page image
-    img = get_page_image(pdf_path, 2, poppler_path)
+    img = get_page_image(pdf_path, 2)
     if not img:
         raise FileNotFoundError("❌ Could not extract page image from PDF")
 
@@ -179,7 +177,6 @@ def main(pdf_path, API_KEY, website_url):
 # Entry Point
 # --------------------------
 if __name__ == "__main__":
-    POPPLER_PATH = r"C:\Users\ali.zain\Desktop\Content_Extraction\poppler-24.08.0\Library\bin"
     PAGE_NUM = 2
     CROP_BOX = (886, 11100, 3250, 12347)  # left, top, right, bottom
     API_KEY = "AIzaSyDDoos-ITDh0hl694HB2um_iqdu36jREAw"

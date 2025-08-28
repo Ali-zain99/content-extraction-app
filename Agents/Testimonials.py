@@ -47,12 +47,11 @@ Important:
 # --------------------------
 # Extract Page Image from PDF
 # --------------------------
-def get_page_image(pdf_path, page_num, poppler_path):
+def get_page_image(pdf_path, page_num):
     images = convert_from_path(
         pdf_path,
         first_page=page_num,
-        last_page=page_num,
-        poppler_path=poppler_path
+        last_page=page_num
     )
     if images:
         return images[0]
@@ -160,11 +159,10 @@ def main(pdf_path,API_KEY, website):
     page_num=2
     api_url=f"{website}/api/testimonials/update"
     # api_url="https://ai-demo.genetechz.com/api/testimonials/update"
-    poppler_path = r"C:\Users\ali.zain\Desktop\Content_Extraction\poppler-24.08.0\Library\bin"
     crop_box = (974, 13078, 4347, 17505)
     api_key = API_KEY
     # Step 1: Get page image
-    img = get_page_image(pdf_path, page_num, poppler_path)
+    img = get_page_image(pdf_path, page_num)
     if not img:
         raise FileNotFoundError("❌ Could not extract page image from PDF")
 

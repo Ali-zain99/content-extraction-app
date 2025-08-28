@@ -8,7 +8,7 @@ from PIL import Image
 # -----------------------------
 # 1. Configure Gemini API
 # -----------------------------
-genai.configure(api_key="AIzaSyDDoos-ITDh0hl694HB2um_iqdu36jREAw")
+
 
 # -----------------------------
 # 2. Prompt builder
@@ -60,7 +60,6 @@ def get_page_image(pdf_path, page_num):
         pdf_path,
         first_page=page_num,
         last_page=page_num,
-        poppler_path=r"C:\Users\ali.zain\Desktop\Content_Extraction\poppler-24.08.0\Library\bin"
     )
     return images[0] if images else None
 

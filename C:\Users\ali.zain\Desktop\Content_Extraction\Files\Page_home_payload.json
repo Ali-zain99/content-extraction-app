@@ -1,0 +1,22 @@
+{
+  "options": [
+    {
+      "id": 1,
+      "option": "heading",
+      "value": "ADVANCING TECHNOLOGIES IN THE GEOTHERMAL ENERGY\nSECTOR",
+      "label": "Heading"
+    },
+    {
+      "id": 2,
+      "option": "paragraph",
+      "value": "<p>Welcome to Enhanced Geothermal Systems 2026, where<br>industry leaders will examine the potential of next-generation<br>geothermal power to transform the U.S. energy landscape.</p><p>The energy sector faces challenges with conventional<br>geothermal systems, including limited hydrothermal<br>resources, drilling technologies, production declines, and<br>heat-to-electricity conversion limitations. This event will<br>spotlight enhanced geothermal systems, focusing on<br>hydraulic, chemical, thermal, and explosive stimulation<br>methods that support innovation in energy production.</p><p>Join us to explore advanced solutions, connect with industry<br>experts, and contribute to the future of geothermal energy<br>innovations.</p>",
+      "label": "Paragraph"
+    },
+    {
+      "id": 3,
+      "option": "Video",
+      "value": "<figure class=\"media\"><oembed url=\"https://player.vimeo.com/video/236701630\"></oembed></figure>",
+      "label": "Video Link"
+    }
+  ]
+}

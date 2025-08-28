@@ -44,12 +44,11 @@ Ensure the names are captured exactly as they appear in the image without altera
 # --------------------------
 # Extract page image from PDF
 # --------------------------
-def get_page_image(pdf_path, page_num, poppler_path):
+def get_page_image(pdf_path, page_num):
     images = convert_from_path(
         pdf_path,
         first_page=page_num,
         last_page=page_num,
-        poppler_path=poppler_path
     )
     if images:
         return images[0]  # Return PIL.Image.Image object
@@ -125,7 +124,7 @@ def load_clean_json(raw_text, save_path=r"C:\Users\ali.zain\Desktop\Content_Extr
 # Send to API
 # --------------------------
 def send_to_api(data, api_url):
-    count=60
+    count=1
     for speaker in data.get("Past Attendees", []):
         url = api_url
         payload = {
@@ -150,14 +149,13 @@ def send_to_api(data, api_url):
 # --------------------------
 def main(pdf_path,API_KEY, website_url):
     page_num=2
-    poppler_path = r"C:\Users\ali.zain\Desktop\Content_Extraction\poppler-24.08.0\Library\bin"
     crop_box = (886, 11100, 3250, 12347)
     api_key = API_KEY
     api_url = f"{website_url}/api/past-attendences/update"
     # api_url = "https://ai-demo.genetechz.com/api/expert-speakers/update"  # Replace
 
     # Step 1: Get page image
-    img = get_page_image(pdf_path, page_num, poppler_path)
+    img = get_page_image(pdf_path, page_num)
     if not img:
         raise FileNotFoundError("❌ Could not extract page image from PDF")
     # Step 2: Crop region
@@ -177,7 +175,6 @@ def main(pdf_path,API_KEY, website_url):
 # Entry Point
 # --------------------------
 if __name__ == "__main__":
-    POPPLER_PATH = r"C:\Users\ali.zain\Desktop\Content_Extraction\poppler-24.08.0\Library\bin"
     PAGE_NUM = 2
     CROP_BOX = (886, 11100, 3250, 12347)  # left, top, right, bottom
    
