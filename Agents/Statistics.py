@@ -21,10 +21,10 @@ The objective is to precisely identify the count or value associated with the fo
 
 Return only a valid JSON object in this format:
 {
-  "Total Industry Topics": "50+",
-  "Number of Networking Events": "30+",
-  "Quantity of Leading Experts": "100+",
-  "Number of Q&A Sessions": "25+"
+  "Industry Topics": "50+",
+  "Networking Events": "30+",
+  "Leading Experts": "100+",
+  "Q&A Sessions": "25+"
 }
 Do not include explanations, markdown, or text outside JSON.
     """
