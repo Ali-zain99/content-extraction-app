@@ -28,11 +28,12 @@ Return the extracted heading and description in JSON format, where the keys are 
 and the values are the corresponding text strings from the document. 
 Ensure the 'description' value includes all text intended to describe the video section, presented 
 in a concise and readable manner with original linebreaks.
+description is written below heading
 
 json format:
 {
 "heading": "Extracted Heading Text",
-"description": "Extracted descriptive text with linebreaks preserved."
+"description": "Extracted descriptive text Written below heading in paragraph ."
 }
 
 If a video section cannot be confidently identified, return an empty JSON object.
