@@ -125,7 +125,7 @@ def load_clean_json(raw_text, save_path=r"C:\Users\ali.zain\Desktop\Content_Extr
 # Send to API
 # --------------------------
 def send_to_api(data, api_url):
-    count=20
+    count=1
     for speaker in data.get("expert_speakers", []):
         url = api_url
         payload = {
