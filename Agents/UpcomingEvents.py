@@ -18,7 +18,7 @@ You are an expert in extracting structured data from images.
 Task: Analyze the provided image, which shows a section of upcoming events displayed as cards. Extract all event cards and return the results strictly in JSON format.  
 
 Each event must be represented as an object with these exact keys:
-- "eventname": Full event name (e.g., "Direct Lithium Extraction USA 2025"). If abbreviation/code only, use that.
+- "eventname": Full event name (e.g., "Direct Lithium Extraction USA 2025"). Donot use abrrevation.
 - "eventlocation": Format "City, State, Country". If incomplete, use what is available.
 - "eventlink": Hyperlink/URL if visible, otherwise null.
 - "eventdate": Format "Month DD - DD, YYYY". Do not use ordinal indicators like "1st" or "2nd". Example: "December 1 - 2, 2025".
