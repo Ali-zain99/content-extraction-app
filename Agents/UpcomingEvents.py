@@ -25,6 +25,7 @@ Each event must be represented as an object with these exact keys:
 - "image": Image filename/path if visible, otherwise null.
 - "hoverimage": Hover image filename/path if visible, otherwise null.
 - if event location country is "US" then US should be mention in event name before year "Direct Lithium Extraction USA 2025".
+- For the text field, it is critical to accurately represent any superscripts (e.g., ¹, ², ³, ™) or subscripts (e.g., ₁, ₂, ₃, ₘ).
 
 Output Format:
 Return ONLY valid JSON. Do not include markdown, explanations, or any extra text.  
