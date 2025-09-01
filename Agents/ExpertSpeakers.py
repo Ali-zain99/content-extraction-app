@@ -20,7 +20,7 @@ The objective is to precisely identify the value associated with the Expert Spea
 
 There are total 3 expert speakers and their company names.  
 Write a proper name if there is any typo in the image.  
-
+For the text field, it is critical to accurately represent any superscripts (e.g., ¹, ², ³, ™) or subscripts (e.g., ₁, ₂, ₃, ₘ).
 Output only valid JSON in this format:
 
 {
