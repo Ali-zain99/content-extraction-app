@@ -28,6 +28,7 @@ Return the extracted heading and description in JSON format, where the keys are 
 and the values are the corresponding text strings from the document. 
 Ensure the 'description' value includes all text intended to describe the video section, presented 
 in a concise and readable manner with original linebreaks.
+For the text field, it is critical to accurately represent any superscripts (e.g., ¹, ², ³, ™) or subscripts (e.g., ₁, ₂, ₃, ₘ).
 description is written below heading
 
 json format:
