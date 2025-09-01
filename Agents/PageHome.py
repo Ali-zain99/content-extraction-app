@@ -17,17 +17,20 @@ def build_prompt():
     return """
 You are an expert information extraction AI. Given the OCR text of a webpage, 
 identify and extract the heading and descriptive text associated with the section featuring a video element. 
-The heading and descriptive text are presented near the following lines:
+The heading and it's discription are presented near the following lines:
 Event Logo
 EVENT DETAILS SPEAKERS
 SPONSORS VENUE MEDIA CONTACT US
 REGISTER
 and a video element.
 
+the discription present below heading in paragraph format .
+
 Return the extracted heading and description in JSON format, where the keys are 'heading' and 'description', 
 and the values are the corresponding text strings from the document. 
 Ensure the 'description' value includes all text intended to describe the video section, presented 
-in a concise and readable manner with original linebreaks.
+with original linebreaks.
+Default video is not a discription
 For the text field, it is critical to accurately represent any superscripts (e.g., ¹, ², ³, ™) or subscripts (e.g., ₁, ₂, ₃, ₘ).
 description is written below heading
 
