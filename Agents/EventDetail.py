@@ -41,11 +41,11 @@ Rules:
 1. "Event name" – Use the event name , after removing first word and last word year.
 2. "Event code" – Use the event code exactly as shown.
 3. "Event Tagline" – Use the full event name except year .
-3. "Event Dates" – Format as "Month, Date1 - Date2, YYYY".
+3. "Event Dates" – Format as "Month Date1 - Date2, YYYY" if date format is US else if date format is UK "Date1 - Date2 Month, YYYY".
 4. "Event Location" – Full location (City, State/Region, Country).
 5. "Event year" – 4-digit year from the event date.
 6. "Event Currency" – Based on country (USA →  USD, Canada → CAD, Eurozone → EUR).
-7. "Event Short Dates" – Format as "Month(In short form), Date1 - Date2, YYYY".
+7. "Event Short Dates" – Format as "Month(In short form) Date1 - Date2, YYYY".
 8. "Event Short Location" – Abbreviated form of Event Location contain only state (remove city and country if present, keep state short form).
 9. "Event Color Name" – first word of the event name.
 10. "Event City Shortcode" – First three letters of the city in uppercase.
