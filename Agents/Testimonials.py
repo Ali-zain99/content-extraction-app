@@ -23,7 +23,7 @@ Your task:
 - Extract all testimonials in the exact order specified below.
 - The order of extraction is strictly top-right first → then middle section → then bottom-left last.
 - Do not shuffle, reorder, or skip any testimonial. Follow the sequence exactly as it appears by position.
-
+- For the text field, it is critical to accurately represent any superscripts (e.g., ¹, ², ³, ™) or subscripts (e.g., ₁, ₂, ₃, ₘ).
 Output format (JSON only):
 
 {
