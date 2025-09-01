@@ -52,6 +52,7 @@ The JSON must follow this structure exactly:
 
 Important Rules:
 - Ensure JSON is valid and properly formatted.
+- For the text field, it is critical to accurately represent any superscripts (e.g., ¹, ², ³, ™) or subscripts (e.g., ₁, ₂, ₃, ₘ).
 - Do not wrap JSON in triple backticks or markdown.
 - Use null (not "None") when a value is unavailable.
 - Maintain the order of events from left to right.
