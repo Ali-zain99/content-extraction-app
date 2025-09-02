@@ -123,15 +123,15 @@ def load_clean_json(raw_text, save_path=r"C:\Users\ali.zain\Desktop\Content_Extr
 # Send to API
 # --------------------------
 def send_to_api(data, api_url):
-    # count=1
+    count=1
     for speaker in data.get("Category", []):
         url = api_url
         payload = {
            "name": speaker.get("News", "")
         }
-        # url = f"{url}/{count}"
+        url = f"{url}/{count}"
         print(url)
-        # count+=1
+        count+=1
         response = requests.post(url, json=payload)
 
         print(f"Sending: {payload}")
@@ -151,7 +151,7 @@ def main(pdf_path,API_KEY, website_url):
     poppler_path = r"C:\Users\ali.zain\Desktop\Content_Extraction\poppler\Library\bin"
     crop_box = (929, 393, 4530, 1314)
     api_key = API_KEY
-    api_url = f"{website_url}/api/category"
+    api_url = f"{website_url}/api/category/update"
     # api_url = "https://ai-demo.genetechz.com/api/expert-speakers/update"  # Replace
 
     # Step 1: Get page image
