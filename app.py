@@ -11,6 +11,8 @@ import Agents.ExpertSpeakers as expert_speakers  # your expertspeakers.py
 import Agents.PastAttendees as past_attendees  # your pastattendees.py
 import Agents.Testimonials as testimonials  # your testimonials.py
 import Agents.UpcomingEvents as upcoming_events  # your upcomingevents.py
+import Agents.NewsOne as news_one
+
 st.set_page_config(page_title="Event Detail Extractor", layout="wide")
 st.title("📄 Event Detail Extraction App")
 
@@ -27,6 +29,9 @@ if uploaded_pdf is not None:
 
     if st.button("🔍 Process PDF"):
             start_time = time.time()
+            with st.spinner("⏳ Extracting news one..."):
+                newsone_json = news_one.main(temp_pdf_path,API_KEY,website_url)
+            st.success("✅ News One extraction complete!")
             with st.spinner("⏳ Extracting event details..."):
                 event_json = event_detail.main(temp_pdf_path,API_KEY,website_url)  # returns raw JSON text
             st.success("✅ Event Details Extraction complete!")
