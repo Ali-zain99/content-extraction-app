@@ -132,7 +132,7 @@ def send_to_api(data, api_url):
         url = f"{url}/{count}"
         print(url)
         count+=1
-        response = requests.post(url, json=payload)
+        response = requests.put(url, json=payload)
 
         print(f"Sending: {payload}")
         print(f"Status Code: {response.status_code}")
