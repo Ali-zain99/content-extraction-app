@@ -137,6 +137,7 @@ def main(pdf_path: str,API_KEY: str, website_url: str):
     try:
         response = requests.post(url, headers=headers, data=json.dumps(payload), timeout=30)
         response.raise_for_status()
+        print(f"Sending to {url}")
         print("✅ API call success")
         return response
     except requests.exceptions.RequestException as e:
