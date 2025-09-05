@@ -29,11 +29,11 @@ Output format (JSON only):
 {
   "testimonial": [
     { "name": "Attendee 1", "company": "Company 1", "text": "Testimonial text 1" },
-    { "name": "Attendee 2", "company": "Company 2", "text": "Testimonial text 2" },
     { "name": "Attendee 3", "company": "Company 3", "text": "Testimonial text 3" },
+    { "name": "Attendee 2", "company": "Company 2", "text": "Testimonial text 2" },
     { "name": "Attendee 4", "company": "Company 4", "text": "Testimonial text 4" },
-    { "name": "Attendee 5", "company": "Company 5", "text": "Testimonial text 5" },
-    { "name": "Attendee 6", "company": "Company 6", "text": "Testimonial text 6" }
+    { "name": "Attendee 6", "company": "Company 6", "text": "Testimonial text 6" },
+    { "name": "Attendee 5", "company": "Company 5", "text": "Testimonial text 5" }
   ]
 }
 
