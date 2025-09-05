@@ -36,9 +36,10 @@ def ocr_with_gemini(pil_image, query):
 # -----------------------------
 def build_prompt(first_page_text, industry_name):
     return f""" You are given text from the first page of a PDF (event details) and an extracted "Industry Name".
+    all headings output were in boxes don't extract example as an output
 
 Rules:
-1. "Event name" – Use the event name , after removing first word and last word year.
+1. "Event name" – Use the event name , after removing first word and last word year Shown in box.
 2. "Event code" – Use the event code exactly as shown.
 3. "Event Tagline" – Use the full event name except year .
 3. "Event Dates" – Format as "Month Date1 - Date2, YYYY" if date format is US else if date format is UK "Date1 - Date2 Month, YYYY".
@@ -55,7 +56,7 @@ Rules:
 14. "Hubspot Disposition" – Format: disposition_<EventCode in lowercase>_<EventYear>
 15. "Hubspot Email Status" – Format: email_status_<EventCode in lowercase>_<EventYear>
 16. "Custom Currency Symbol" – leave it blank.
-17. "Currency Position" – Always "Top left".
+17. "Currency Position" – Always "topleft".
 
 
 JSON template:
@@ -77,7 +78,7 @@ JSON template:
   "Hubspot Disposition": "",  
   "Hubspot Email Status": "",  
   "Custom Currency Symbol": "",
-  "Currency Position": "Top left"
+  "Currency Position": "topleft"
 }}
 
 First page text:
