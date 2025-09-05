@@ -34,8 +34,8 @@ if uploaded_pdf is not None:
             with st.spinner("⏳ Extracting news categories..."):
                 news_json = news_category.main(temp_pdf_path,API_KEY,website_url)  # returns raw JSON text
             st.success("✅ News Category extraction complete!")
-            with st.spinner("⏳ Extracting news one..."):
-                newsone_json = news_one.main(temp_pdf_path,API_KEY,website_url)
+            # with st.spinner("⏳ Extracting news one..."):
+            #     newsone_json = news_one.main(temp_pdf_path,API_KEY,website_url)
             st.success("✅ News One extraction complete!")
             with st.spinner("⏳ Extracting event details..."):
                 event_json = event_detail.main(temp_pdf_path,API_KEY,website_url)  # returns raw JSON text
