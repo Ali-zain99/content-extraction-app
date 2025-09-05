@@ -28,12 +28,12 @@ Output format (JSON only):
 
 {
   "testimonial": [
-    { "name": "Attendee 1", "company": "Company 1", "text": "Testimonial text 1" },
-    { "name": "Attendee 3", "company": "Company 3", "text": "Testimonial text 3" },
-    { "name": "Attendee 2", "company": "Company 2", "text": "Testimonial text 2" },
-    { "name": "Attendee 4", "company": "Company 4", "text": "Testimonial text 4" },
-    { "name": "Attendee 6", "company": "Company 6", "text": "Testimonial text 6" },
-    { "name": "Attendee 5", "company": "Company 5", "text": "Testimonial text 5" }
+    { "id":1,"name": "Attendee 1", "company": "Company 1", "text": "Testimonial text 1" },
+    { "id":2,"name": "Attendee 2", "company": "Company 2", "text": "Testimonial text 2" },
+    { "id":3,"name": "Attendee 3", "company": "Company 3", "text": "Testimonial text 3" },
+    { "id":4,"name": "Attendee 4", "company": "Company 4", "text": "Testimonial text 4" },
+    { "id":5,"name": "Attendee 5", "company": "Company 5", "text": "Testimonial text 5" },
+    { "id":6,"name": "Attendee 6", "company": "Company 6", "text": "Testimonial text 6" }
   ]
 }
 
@@ -121,7 +121,30 @@ def load_clean_json(raw_text, save_path=r"C:\Users\ali.zain\Desktop\Content_Extr
 
     print(f"✅ JSON saved to {save_path}")
     return data
+    
+def swapping_json(save_path=r"C:\Users\ali.zain\Desktop\Content_Extraction\Files\Testimonial.json"):
+    with open(save_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
 
+    # Convert list to dict for quick access by id
+    testimonials = {item["id"]: item for item in data["testimonial"]}
+
+    # Swap function
+    def swap_entries(id1, id2):
+        testimonials[id1], testimonials[id2] = testimonials[id2], testimonials[id1]
+
+    # Perform the swaps
+    swap_entries(2, 3)
+    swap_entries(5, 6)
+
+    # Rebuild the list in the same id order
+    data["testimonial"] = [testimonials[i] for i in sorted(testimonials.keys())]
+    # Save back to JSON file
+    with open(save_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+    print("Swapped entries and rewrote testimonial.json successfully!")
+    return data
 
 # --------------------------
 # Send Testimonials to API
@@ -174,7 +197,7 @@ def main(pdf_path,API_KEY, website):
 
     # Step 4: Clean + Save JSON
     data = load_clean_json(raw_text)
-
+    data = swapping_json(r"C:\Users\ali.zain\Desktop\Content_Extraction\Files\Testimonial.json")
     # Step 5: Send to API
     send_to_api(data, api_url)
 
