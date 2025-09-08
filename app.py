@@ -3,16 +3,14 @@ import time
 import json
 import requests
 import tempfile
-from concurrent.futures import ThreadPoolExecutor, as_completed
-
-import Agents.EventDetail as event_detail
-import Agents.PageHome as page_home
-import Agents.KeyPoints as key_points
-import Agents.Statistics as statistics
-import Agents.ExpertSpeakers as expert_speakers
-import Agents.PastAttendees as past_attendees
-import Agents.Testimonials as testimonials
-import Agents.UpcomingEvents as upcoming_events
+import Agents.EventDetail as event_detail  # your eventdetail.py
+import Agents.PageHome as page_home  # your pagehome.py
+import Agents.KeyPoints as key_points  # your keypoints.py
+import Agents.Statistics as statistics  # your statistics.py
+import Agents.ExpertSpeakers as expert_speakers  # your expertspeakers.py
+import Agents.PastAttendees as past_attendees  # your pastattendees.py
+import Agents.Testimonials as testimonials  # your testimonials.py
+import Agents.UpcomingEvents as upcoming_events  # your upcomingevents.py
 import Agents.NewsOne as news_one
 import Agents.NewsCategory as news_category
 
@@ -30,40 +28,45 @@ if uploaded_pdf is not None:
         tmp_file.write(uploaded_pdf.read())
         temp_pdf_path = tmp_file.name
 
+
     if st.button("🔍 Process PDF"):
-        start_time = time.time()
+            start_time = time.time()
+            with st.spinner("⏳ Extracting news categories..."):
+                news_json = news_category.main(temp_pdf_path,API_KEY,website_url)  # returns raw JSON text
+            st.success("✅ News Category extraction complete!")
+            with st.spinner("⏳ Extracting news one..."):
+                newsone_json = news_one.main(temp_pdf_path,API_KEY,website_url)
+            st.success("✅ News One extraction complete!")
+            with st.spinner("⏳ Extracting event details..."):
+                event_json = event_detail.main(temp_pdf_path,API_KEY,website_url)  # returns raw JSON text
+            st.success("✅ Event Details Extraction complete!")
+            with st.spinner("⏳ Extracting home_json..."):
+                home_json= page_home.main(temp_pdf_path,API_KEY,website_url)  # returns raw JSON text
+            st.success("✅ Homepage extraction complete!")
+            with st.spinner("⏳ Extracting keypoints..."):
+                keypoints_json = key_points.main(temp_pdf_path,API_KEY,website_url)  # returns raw JSON text
+            st.success("✅ Key Topics extraction complete!")
+            with st.spinner("⏳ Extracting statistics..."):
+                statistics_json = statistics.main(temp_pdf_path,API_KEY,website_url)  # returns raw JSON text
+            st.success("✅ Statistics extraction complete!")
+            with st.spinner("⏳ Extracting expert_speakers..."):
+                expert_speakers.main(temp_pdf_path,API_KEY,website_url)  # returns raw JSON text
+            st.success("✅ Expert Speakers extraction complete!")
+            with st.spinner("⏳ Extracting past_attendees..."):
+              past_attendees.main(temp_pdf_path,API_KEY,website_url)
+            st.success("✅ Past Attendees extraction complete!")
+            with st.spinner("⏳ Extracting testimonials..."):
+                testimonials.main(temp_pdf_path,API_KEY,website_url)
+            st.success("✅ Testimonials extraction complete!")
+            with st.spinner("⏳ Extracting upcoming_events..."):
+                upcoming_events.main(temp_pdf_path,API_KEY,website_url)
+            st.success("✅ Upcoming Events extraction complete!")
+            end_time = time.time()
+            elapsed_time = end_time - start_time
+            st.snow()
+            st.success(f"❄️ PDF processing completed in {elapsed_time:.2f} seconds!")
 
-        # Define tasks
-        tasks = {
-            "news_category": lambda: news_category.main(temp_pdf_path, API_KEY, website_url),
-            "news_one": lambda: news_one.main(temp_pdf_path, API_KEY, website_url),
-            "event_detail": lambda: event_detail.main(temp_pdf_path, API_KEY, website_url),
-            "home_json": lambda: page_home.main(temp_pdf_path, API_KEY, website_url),
-            "keypoints": lambda: key_points.main(temp_pdf_path, API_KEY, website_url),
-            "statistics": lambda: statistics.main(temp_pdf_path, API_KEY, website_url),
-            "expert_speakers": lambda: expert_speakers.main(temp_pdf_path, API_KEY, website_url),
-            "past_attendees": lambda: past_attendees.main(temp_pdf_path, API_KEY, website_url),
-            "testimonials": lambda: testimonials.main(temp_pdf_path, API_KEY, website_url),
-            "upcoming_events": lambda: upcoming_events.main(temp_pdf_path, API_KEY, website_url),
-        }
 
-        results = {}
 
-        # Run tasks in parallel
-        with st.spinner("⏳ Extracting all sections in parallel..."):
-            with ThreadPoolExecutor(max_workers=len(tasks)) as executor:
-                future_to_task = {executor.submit(func): name for name, func in tasks.items()}
 
-                for future in as_completed(future_to_task):
-                    task_name = future_to_task[future]
-                    try:
-                        results[task_name] = future.result()
-                        st.success(f"✅ {task_name.replace('_', ' ').title()} extraction complete!")
-                    except Exception as e:
-                        st.error(f"❌ {task_name.replace('_', ' ').title()} failed: {e}")
-
-        # Show final result
-        end_time = time.time()
-        elapsed_time = end_time - start_time
-        st.snow()
-        st.success(f"❄️ PDF processing completed in {elapsed_time:.2f} seconds!")
+            
