@@ -64,7 +64,7 @@ if uploaded_pdf is not None:
             # end_time = time.time()
             # elapsed_time = end_time - start_time
             st.snow()
-            st.success(f"❄️ PDF processing completed in {elapsed_time:.2f} seconds!")
+            # st.success(f"❄️ PDF processing completed in {elapsed_time:.2f} seconds!")
 
 
 
