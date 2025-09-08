@@ -134,8 +134,8 @@ def swapping_json(save_path=r"C:\Users\ali.zain\Desktop\Content_Extraction\Files
         testimonials[id1], testimonials[id2] = testimonials[id2], testimonials[id1]
 
     # Perform the swaps
-    swap_entries(2, 3)
-    swap_entries(5, 6)
+    # swap_entries(2, 3)
+    # swap_entries(5, 6)
 
     # Rebuild the list in the same id order
     data["testimonial"] = [testimonials[i] for i in sorted(testimonials.keys())]
