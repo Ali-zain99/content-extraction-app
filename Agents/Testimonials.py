@@ -149,8 +149,7 @@ def swapping_json(save_path=r"C:\Users\ali.zain\Desktop\Content_Extraction\Files
 # --------------------------
 # Send Testimonials to API
 # --------------------------
-def send_to_api(data, api_url):
-    count = 1
+def send_to_api(data, api_url,count):
     for speaker in data.get("testimonial", []):
         url = f"{api_url}/{count}"
 
