@@ -61,8 +61,8 @@ if uploaded_pdf is not None:
             # with st.spinner("⏳ Extracting upcoming_events..."):
             #     upcoming_events.main(temp_pdf_path,API_KEY,website_url)
             # st.success("✅ Upcoming Events extraction complete!")
-            end_time = time.time()
-            elapsed_time = end_time - start_time
+            # end_time = time.time()
+            # elapsed_time = end_time - start_time
             st.snow()
             st.success(f"❄️ PDF processing completed in {elapsed_time:.2f} seconds!")
 
