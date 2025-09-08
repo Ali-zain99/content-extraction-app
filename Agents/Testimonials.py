@@ -186,7 +186,7 @@ def main(pdf_path,API_KEY, website):
     crop_box = (1080,13217,4369,15307)
     api_key = API_KEY
     # Step 1: Get page image
-    img = get_page_image(pdf_path, page_num, poppler_path)
+    img = get_page_image(pdf_path, page_num)
     if not img:
         raise FileNotFoundError("❌ Could not extract page image from PDF")
 
