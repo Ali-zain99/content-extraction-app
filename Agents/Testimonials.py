@@ -182,10 +182,11 @@ def main(pdf_path,API_KEY, website):
     page_num=2
     api_url=f"{website}/api/testimonials/update"
     # api_url="https://ai-demo.genetechz.com/api/testimonials/update"
-    crop_box = (974, 13078, 4347, 17505)
+    poppler_path = r"C:\Users\ali.zain\Desktop\Content_Extraction\poppler\Library\bin"
+    crop_box = (1080,13217,4369,15307)
     api_key = API_KEY
     # Step 1: Get page image
-    img = get_page_image(pdf_path, page_num)
+    img = get_page_image(pdf_path, page_num, poppler_path)
     if not img:
         raise FileNotFoundError("❌ Could not extract page image from PDF")
 
@@ -197,9 +198,18 @@ def main(pdf_path,API_KEY, website):
 
     # Step 4: Clean + Save JSON
     data = load_clean_json(raw_text)
-    data = swapping_json(r"C:\Users\ali.zain\Desktop\Content_Extraction\Files\Testimonial.json")
+    data= swapping_json(r"C:\Users\ali.zain\Desktop\Content_Extraction\Files\Testimonial.json")
+
+
     # Step 5: Send to API
-    send_to_api(data, api_url)
+    send_to_api(data, api_url,1)
+    cropped_path = crop_testimonials(img, (872, 15214, 4396, 17585))
+    raw_text = extract_testimonials(cropped_path, api_key)
+    data = load_clean_json(raw_text)
+    data= swapping_json(r"C:\Users\ali.zain\Desktop\Content_Extraction\Files\Testimonial.json")
+    send_to_api(data, api_url,4)
+
+
 
 
 # --------------------------
