@@ -132,7 +132,8 @@ def main(pdf_path: str,API_KEY: str, website_url: str):
     print(f"✅ Payload saved to {payload_file}")
 
     # 7. Send payload → API
-    url = "https://ai-demo.genetechz.com/api/home-page"
+    # url = "https://ai-demo.genetechz.com/api/home-page"
+    url = f"{website_url}/api/home-page"
     headers = {"Content-Type": "application/json"}
     try:
         response = requests.post(url, headers=headers, data=json.dumps(payload), timeout=30)
