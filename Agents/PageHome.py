@@ -81,6 +81,7 @@ def ocr_with_gemini(pil_image):
 # -----------------------------
 def main(pdf_path: str,API_KEY: str, website_url: str):
     """Extract homepage section, save JSON, build payload, send to API"""
+    genai.configure(api_key=API_KEY)
     # 1. Extract page
     page_img = get_page_image(pdf_path, 2)
     if not page_img:
