@@ -112,8 +112,10 @@ def main(pdf_path: str,API_KEY: str, website_url: str):
     # 5. Build description HTML
     paragraphs = description.split("\n\n")
     description_html = "".join(
-        f"<p>{p_clean}</p>" for p in paragraphs if (p_clean := p.replace("\n", "<br>").strip())
-    )
+    f"<p>{p.strip().replace('\n', ' ')}</p>"
+    for p in paragraphs
+    if p.strip()
+        )
 
     # Example video embed
     video_html = '<figure class="media"><oembed url="https://player.vimeo.com/video/236701630"></oembed></figure>'
