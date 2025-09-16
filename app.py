@@ -78,9 +78,9 @@ if uploaded_pdf is not None and st.button("🔍 Process PDF with Selected Agents
     st.session_state["agent_results"] = results
 
 # Chatbot Section
-if "agent_results" in st.session_state and st.session_state["agent_results"]:
-    st.subheader("💬 Chat with Agents")
-    agent_choice = st.selectbox("Choose an agent to chat with", list(st.session_state["agent_results"].keys()))
-    user_input = st.text_input("Ask a question to the selected agent:")
+# if "agent_results" in st.session_state and st.session_state["agent_results"]:
+#     st.subheader("💬 Chat with Agents")
+#     agent_choice = st.selectbox("Choose an agent to chat with", list(st.session_state["agent_results"].keys()))
+#     user_input = st.text_input("Ask a question to the selected agent:")
 
    
